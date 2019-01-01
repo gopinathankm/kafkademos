@@ -1,0 +1,18 @@
+ * Using country topic and consumer group countrygroup
+ * Compile and create a fat JAR by invoking: mvn compile assembly:single.
+ *
+ * Create a topic named part-demo with three partitions and one replication factor:
+ * <KAFKA_HOME>bin/bin/kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic country
+
+ * Start three consumers, 
+ * then watch the console to see how your partitions are assigned and revoked every time you start a new instance of the consumer:
+ * java -jar ./country_consumer_jar/country_consumer.jar
+ *
+ * Start a producer:
+ * java -jar ./country_producer_jar/country_producer.jar
+   USA: 1 order
+   India: 1 order
+   France: 1 order
+   Germany: 1 order
+
+

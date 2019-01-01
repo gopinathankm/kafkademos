@@ -1,0 +1,223 @@
+Usage
+user@user-Lenovo-G400:~/MyKafkaProjects/topic_project$ java -jar ./topic_project_jar/topic_project.jar create test localhost:9092
+
+Topic test created
+user@user-Lenovo-G400:~/MyKafkaProjects/topic_project$ java -jar ./topic_project_jar/topic_project.jar describe test localhost:9092
+(name=test, internal=false, partitions=(partition=0, leader=user-Lenovo-G400:9092 (id: 0 rack: null), replicas=user-Lenovo-G400:9092 (id: 0 rack: null), isr=user-Lenovo-G400:9092 (id: 0 rack: null)))
+
+user@user-Lenovo-G400:~/MyKafkaProjects/topic_project$ java -jar ./topic_project_jar/topic_project.jar delete test localhost:9092
+Topic test deleteduser@
+
+user-Lenovo-G400:~/MyKafkaProjecjava -jar ./topic_project_jar/topic_project.jar create test localhost:9092
+Topic test created
+
+user@user-Lenovo-G400:~/MyKafkaProjects/topic_project$ java -jar ./topic_project_jar/topic_project.jar producer  test localhost:9092
+
+user@user-Lenovo-G400:~/confluent-5.0.0$ bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic test  --from-beginning
+i am at two with nature
+four score and seven years ago
+the cow jumped over the moon
+four score and seven years ago
+four score and seven years ago
+an apple a day keeps the doctor away
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+an apple a day keeps the doctor away
+the cow jumped over the moon
+snow white and the seven dwarfs
+i am at two with nature
+i am at two with nature
+the cow jumped over the moon
+four score and seven years ago
+the cow jumped over the moon
+four score and seven years ago
+snow white and the seven dwarfs
+the cow jumped over the moon
+an apple a day keeps the doctor away
+an apple a day keeps the doctor away
+the cow jumped over the moon
+i am at two with nature
+i am at two with nature
+the cow jumped over the moon
+four score and seven years ago
+the cow jumped over the moon
+four score and seven years ago
+an apple a day keeps the doctor away
+an apple a day keeps the doctor away
+i am at two with nature
+four score and seven years ago
+snow white and the seven dwarfs
+four score and seven years ago
+snow white and the seven dwarfs
+four score and seven years ago
+an apple a day keeps the doctor away
+the cow jumped over the moon
+i am at two with nature
+the cow jumped over the moon
+snow white and the seven dwarfs
+four score and seven years ago
+the cow jumped over the moon
+an apple a day keeps the doctor away
+four score and seven years ago
+an apple a day keeps the doctor away
+the cow jumped over the moon
+the cow jumped over the moon
+four score and seven years ago
+the cow jumped over the moon
+four score and seven years ago
+the cow jumped over the moon
+an apple a day keeps the doctor away
+the cow jumped over the moon
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+the cow jumped over the moon
+four score and seven years ago
+four score and seven years ago
+the cow jumped over the moon
+an apple a day keeps the doctor away
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+the cow jumped over the moon
+i am at two with nature
+i am at two with nature
+i am at two with nature
+an apple a day keeps the doctor away
+four score and seven years ago
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+an apple a day keeps the doctor away
+four score and seven years ago
+an apple a day keeps the doctor away
+four score and seven years ago
+an apple a day keeps the doctor away
+an apple a day keeps the doctor away
+four score and seven years ago
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+the cow jumped over the moon
+an apple a day keeps the doctor away
+i am at two with nature
+i am at two with nature
+four score and seven years ago
+the cow jumped over the moon
+the cow jumped over the moon
+the cow jumped over the moon
+i am at two with nature
+the cow jumped over the moon
+four score and seven years ago
+snow white and the seven dwarfs
+an apple a day keeps the doctor away
+snow white and the seven dwarfs
+snow white and the seven dwarfs
+the cow jumped over the moon
+i am at two with nature
+^CProcessed a total of 100 messages
+
+user@user-Lenovo-G400:~/confluent-5.0.0$ cd ~
+user@user-Lenovo-G400:~$ cd MyKafkaProjects/topic_project/
+
+user@user-Lenovo-G400:~/MyKafkaProjects/topic_project$ java -jar ./topic_project_jar/topic_project.jar consumer  test localhost:9092 testgroup
+1: i am at two with nature
+2: four score and seven years ago
+3: the cow jumped over the moon
+4: four score and seven years ago
+5: four score and seven years ago
+6: an apple a day keeps the doctor away
+7: snow white and the seven dwarfs
+8: snow white and the seven dwarfs
+9: an apple a day keeps the doctor away
+10: the cow jumped over the moon
+11: snow white and the seven dwarfs
+12: i am at two with nature
+13: i am at two with nature
+14: the cow jumped over the moon
+15: four score and seven years ago
+16: the cow jumped over the moon
+17: four score and seven years ago
+18: snow white and the seven dwarfs
+19: the cow jumped over the moon
+20: an apple a day keeps the doctor away
+21: an apple a day keeps the doctor away
+22: the cow jumped over the moon
+23: i am at two with nature
+24: i am at two with nature
+25: the cow jumped over the moon
+26: four score and seven years ago
+27: the cow jumped over the moon
+28: four score and seven years ago
+29: an apple a day keeps the doctor away
+30: an apple a day keeps the doctor away
+31: i am at two with nature
+32: four score and seven years ago
+33: snow white and the seven dwarfs
+34: four score and seven years ago
+35: snow white and the seven dwarfs
+36: four score and seven years ago
+37: an apple a day keeps the doctor away
+38: the cow jumped over the moon
+39: i am at two with nature
+40: the cow jumped over the moon
+41: snow white and the seven dwarfs
+42: four score and seven years ago
+43: the cow jumped over the moon
+44: an apple a day keeps the doctor away
+45: four score and seven years ago
+46: an apple a day keeps the doctor away
+47: the cow jumped over the moon
+48: the cow jumped over the moon
+49: four score and seven years ago
+50: the cow jumped over the moon
+51: four score and seven years ago
+52: the cow jumped over the moon
+53: an apple a day keeps the doctor away
+54: the cow jumped over the moon
+55: snow white and the seven dwarfs
+56: snow white and the seven dwarfs
+57: snow white and the seven dwarfs
+58: snow white and the seven dwarfs
+59: snow white and the seven dwarfs
+60: the cow jumped over the moon
+61: four score and seven years ago
+62: four score and seven years ago
+63: the cow jumped over the moon
+64: an apple a day keeps the doctor away
+65: snow white and the seven dwarfs
+66: snow white and the seven dwarfs
+67: the cow jumped over the moon
+68: i am at two with nature
+69: i am at two with nature
+70: i am at two with nature
+71: an apple a day keeps the doctor away
+72: four score and seven years ago
+73: snow white and the seven dwarfs
+74: snow white and the seven dwarfs
+75: an apple a day keeps the doctor away
+76: four score and seven years ago
+77: an apple a day keeps the doctor away
+78: four score and seven years ago
+79: an apple a day keeps the doctor away
+80: an apple a day keeps the doctor away
+81: four score and seven years ago
+82: snow white and the seven dwarfs
+83: snow white and the seven dwarfs
+84: the cow jumped over the moon
+85: an apple a day keeps the doctor away
+86: i am at two with nature
+87: i am at two with nature
+88: four score and seven years ago
+89: the cow jumped over the moon
+90: the cow jumped over the moon
+91: the cow jumped over the moon
+92: i am at two with nature
+93: the cow jumped over the moon
+94: four score and seven years ago
+95: snow white and the seven dwarfs
+96: an apple a day keeps the doctor away
+97: snow white and the seven dwarfs
+98: snow white and the seven dwarfs
+99: the cow jumped over the moon
+100: i am at two with nature
+^Cuser@user-Lenovo-G400:~/MyKafkaProjects/topic_project$ 

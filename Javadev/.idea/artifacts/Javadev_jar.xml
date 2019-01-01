@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Javadev:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Javadev_jar</output-path>
+    <root id="archive" name="Javadev.jar">
+      <element id="module-output" name="Javadev" />
+      <element id="library" level="project" name="Maven: org.apache.pulsar:pulsar-client:${pulsar.version}" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,92 @@
+/**
+ * @author Gopinathan Munappy
+ *
+ * @date    01/12/2018
+
+
+Create a topic named group-test with two partitions: 
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 –partitions 2 –topic group-test
+    
+Start a producer that could be used for publishing messages to the group-test topic that you just created: 
+java -jar offset-project-producer.jar group-test
+
+Start three consumers that listen for messages published to the group-test topic. Use group1 for the value of your group id. This will give you three consumers in mygroup: 
+java -jar offset-project-consumer.jar group-test mygroup
+
+Start a fourth consumer, but this time change the value of the group id to yourgroup. 
+This will give you three consumers in group1 and a single consumer in yourgroup: 
+java -jar offset-project-consumer.jar group-test yourgroup
+
+Return to the producer console and start typing messages. Every new message you publish should appear once in the yourgroup consumer window and once in one of the three group1 consumer windows, as shown in Figure 3.
+
+ * Usage 2 Run Producer group-test
+ * message 1
+ * Message sent to topic ->group-test stored at offset->0
+ * message 2
+ * Message sent to topic ->group-test stored at offset->0
+ * message 3
+ * Message sent to topic ->group-test stored at offset->1
+ * message 4
+ * Message sent to topic ->group-test stored at offset->1
+ * message 5
+ * Message sent to topic ->group-test stored at offset->2
+ 
+sage: 1   Run Consumer mytopic mygroup 0
+ * Hello Kafka
+ * Again Hello Kafka
+ * One more Hello Kafka
+ * ^CProcessed a total of 3 messages
+ *
+ * Usage: 2
+ * bin/kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic group-test
+ *
+ * Start 3 consumers gruop-test mygroup
+ * Consumer 1
+ * [] topic-partitions are revoked from this consumer
+ * [group-test-1, group-test-0] topic-partitions are assigned to this consumer
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * [group-test-1, group-test-0] topic-partitions are revoked from this consumer
+ * [group-test-1] topic-partitions are assigned to this consumer
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * [group-test-1] topic-partitions are revoked from this consumer
+ * [] topic-partitions are assigned to this consumer
+ *
+ *
+ * Consumer 2
+ * [] topic-partitions are revoked from this consumer
+ * [group-test-0] topic-partitions are assigned to this consumer
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * [group-test-0] topic-partitions are revoked from this consumer
+ * [group-test-0] topic-partitions are assigned to this consumer
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * message 1
+ * message 3
+ * message 5
+ *
+ * Consumer 3
+ * [] topic-partitions are revoked from this consumer
+ * [group-test-1] topic-partitions are assigned to this consumer
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * message 2
+ * message 4
+ *
+ * Usage 3 Run Consumer group-test yourgroup
+ * [] topic-partitions are revoked from this consumer
+ * [group-test-1, group-test-0] topic-partitions are assigned to this consumer
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * Current offset is 0 committed offset is ->null
+ * Setting offset to begining
+ * message 1
+ * message 2
+ * message 3
+ * message 4
+ * message 5
+

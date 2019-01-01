@@ -1,0 +1,12 @@
+{
+"type": "record",
+"namespace": "com.gopi.cryptoavro",
+"name": "emp",
+"fields": [
+{"name": "name", "type": "string"},
+{"name": "id", "type": "int"},
+{"name": "salary", "type": "int"},
+{"name": "age", "type": "int"},
+{"name": "address", "type": "string"}
+]
+}

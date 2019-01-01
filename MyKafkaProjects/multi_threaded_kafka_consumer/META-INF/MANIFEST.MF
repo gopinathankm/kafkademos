@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.gopi.kafka.multithreadconsumer.single_consumer_multipl
+ e_worker_processing_threads.SingleConsumerMain
+

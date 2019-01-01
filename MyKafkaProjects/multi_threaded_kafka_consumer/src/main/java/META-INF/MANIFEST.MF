@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.gopi.kafka.multithreadconsumer.multiple_consumers_with
+ _own_threads.MultipleConsumersMain
+
